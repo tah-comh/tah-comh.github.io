@@ -154,6 +154,15 @@ footer {
     }
 }
 
+.download-info {
+    margin-top: 8px;
+    color: #666;
+    text-align: center;
+}
+
+#apk-date {
+    font-weight: bold;
+}
 .screenshot-container {
     margin: 15px 0;
     text-align: center;
