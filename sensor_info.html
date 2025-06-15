@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSEC Sensor Information - Lake Mendota Buoy & AOSS Tower</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .header h1 {
+            margin: 0 0 10px 0;
+            font-size: 2.5em;
+            font-weight: 300;
+        }
+        
+        .header p {
+            margin: 0;
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .section {
+            background: white;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .section-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            margin: 0;
+            font-size: 1.5em;
+            font-weight: 500;
+        }
+        
+        .tower-header {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0;
+        }
+        
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        th {
+            background-color: #f8f9fa;
+            font-weight: 600;
+            color: #495057;
+            text-transform: uppercase;
+            font-size: 0.9em;
+            letter-spacing: 0.5px;
+        }
+        
+        tr:hover {
+            background-color: #f8f9fa;
+            transition: background-color 0.3s ease;
+        }
+        
+        .sensor-name {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        .sensor-symbol {
+            font-family: 'Courier New', monospace;
+            background-color: #e9ecef;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            color: #495057;
+        }
+        
+        .sensor-units {
+            font-weight: 500;
+            color: #6c757d;
+        }
+        
+        .sensor-description {
+            color: #6c757d;
+            line-height: 1.5;
+        }
+        
+        .depth-range {
+            font-style: italic;
+            color: #17a2b8;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #6c757d;
+            font-size: 0.9em;
+        }
+        
+        .footer a {
+            color: #2c3e50;
+            text-decoration: none;
+        }
+        
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .header p {
+                font-size: 1em;
+            }
+            
+            th, td {
+                padding: 10px;
+                font-size: 0.9em;
+            }
+            
+            .section-header {
+                font-size: 1.3em;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>📊 SSEC Sensor Information</h1>
+        <p>Comprehensive guide to sensors on Lake Mendota Buoy & AOSS Tower</p>
+    </div>
+
+    <div class="section">
+        <h2 class="section-header">🌊 Lake Mendota Buoy Sensors</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Sensor Name</th>
+                    <th>Symbol</th>
+                    <th>Units</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="sensor-name">Air Temperature</td>
+                    <td class="sensor-symbol">air_temp</td>
+                    <td class="sensor-units">°C</td>
+                    <td class="sensor-description">Measures the temperature of the air at the buoy location</td>
+                </tr>
+                <tr>
+                    <td class="sensor-name">Relative Humidity</td>
+                    <td class="sensor-symbol">rel_hum</td>
+                    <td class="sensor-units">%</td>
+                    <td class="sensor-description">Percentage of water vapor in the air relative to the maximum possible at current temperature</td>
+                </tr>
+                <tr>
+                    <td class="sensor-name">Dewpoint Temperature</td>
+                    <td class="sensor-symbol">dewpoint</td>
+                    <td class="sensor-units">°C</td>
+                    <td class="sensor-description">Temperature at which air becomes saturated with water vapor</td>
+                </tr>
+                <tr>
+                    <td class="sensor-name">Wind Speed</td>
+                    <td class="sensor-symbol">wind_speed</td>
+                    <td class="sensor-units">m/s</td>
+                    <td class="sensor-description">Speed of wind movement over the lake surface</td>
+                </tr>
+                <tr>
+                    <td class="sensor-name">Wind Direction</td>
+                    <td class="sensor-symbol">wind_direction</td>
+                    <td class="sensor-units">°</td>
+                    <td class="sensor-description">Direction from which the wind is blowing (0-360°, where 0° is North)</td>
+                </tr>
+                <tr>
+                    <td class="sensor-name">Wind Gust</td>
+                    <td class="sensor-symbol">wind_gust</td>
+                    <td class="sensor-units">m/s</td>
+                    <td class="sensor-description">Maximum wind speed recorded over a short time period</td>
+                </tr>
+                <tr>
+                    <td class="sensor-name">Pressure</td>
+                    <td class="sensor-symbol">pressure</td>
+                    <td class="sensor-units">hPa</td>
+                    <td class="sensor-description">Atmospheric pressure at the buoy location</td>
+                </tr>
+                <tr>
+                    <td class="sensor-name">Water Temperature</td>
+                    <td class="sensor-symbol">water_temp_X</td>
+                    <td class="sensor-units">°C</td>
+                    <td class="sensor-description">Water temperature at various depths <span class="depth-range">(0m to 20m, 23 different measurements)</span></td>
+                </tr>
+                <tr>
+                    <td class="sensor-name">Dissolved Oxygen</td>
+                    <td class="sensor-symbol">do_raw2</td>
+                    <td class="sensor-units">mg/L</td>
+                    <td class="sensor-description">Concentration of dissolved oxygen in the water, critical for aquatic life</td>
+                </tr>
+                <tr>
+                    <td class="sensor-name">Dissolved Oxygen Saturation</td>
+                    <td class="sensor-symbol">do_sat2</td>
+                    <td class="sensor-units">%</td>
+                    <td class="sensor-description">Percentage of dissolved oxygen relative to saturation level at current temperature</td>
+                </tr>
+                <tr>
+                    <td class="sensor-name">Chlorophyll (YSI)</td>
+                    <td class="sensor-symbol">chlorophyll_ysi</td>
+                    <td class="sensor-units">RFU</td>
+                    <td class="sensor-description">Chlorophyll fluorescence indicating phytoplankton biomass and algae concentration</td>
+                </tr>
+                <tr>
+                    <td class="sensor-name">Phycocyanin (YSI)</td>
+                    <td class="sensor-symbol">phycocyanin_ysi</td>
+                    <td class="sensor-units">RFU</td>
+                    <td class="sensor-description">Blue-green algae pigment, indicator of cyanobacteria presence</td>
+                </tr>
+                <tr>
+                    <td class="sensor-name">Turbidity</td>
+                    <td class="sensor-symbol">turbidity</td>
+                    <td class="sensor-units">FNU</td>
+                    <td class="sensor-description">Measure of water clarity - how much light is scattered by suspended particles</td>
+                </tr>
+                <tr>
+                    <td class="sensor-name">Fluorescent Dissolved Organic Matter</td>
+                    <td class="sensor-symbol">fdom</td>
+                    <td class="sensor-units">RFU</td>
+                    <td class="sensor-description">Organic compounds that fluoresce, indicating dissolved organic matter concentration</td>
+                </tr>
+                <tr>
+                    <td class="sensor-name">Limno Battery</td>
+                    <td class="sensor-symbol">limno_battery</td>
+                    <td class="sensor-units">volts</td>
+                    <td class="sensor-description">Battery voltage of the water quality instrumentation system</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2 class="section-header tower-header">🗼 AOSS Tower Sensors</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Sensor Name</th>
+                    <th>Symbol</th>
+                    <th>Units</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="sensor-name">Air Temperature</td>
+                    <td class="sensor-symbol">air_temp</td>
+                    <td class="sensor-units">°C</td>
+                    <td class="sensor-description">Atmospheric temperature measured at the tower location</td>
+                </tr>
+                <tr>
+                    <td class="sensor-name">Relative Humidity</td>
+                    <td class="sensor-symbol">rel_hum</td>
+                    <td class="sensor-units">%</td>
+                    <td class="sensor-description">Percentage of water vapor in the air relative to maximum capacity</td>
+                </tr>
+                <tr>
+                    <td class="sensor-name">Dewpoint Temperature</td>
+                    <td class="sensor-symbol">dewpoint</td>
+                    <td class="sensor-units">°C</td>
+                    <td class="sensor-description">Temperature at which air reaches saturation and dew begins to form</td>
+                </tr>
+                <tr>
+                    <td class="sensor-name">Wind Speed</td>
+                    <td class="sensor-symbol">wind_speed</td>
+                    <td class="sensor-units">m/s</td>
+                    <td class="sensor-description">Horizontal wind velocity measured at tower height</td>
+                </tr>
+                <tr>
+                    <td class="sensor-name">Wind Direction</td>
+                    <td class="sensor-symbol">wind_direction</td>
+                    <td class="sensor-units">°</td>
+                    <td class="sensor-description">Compass direction from which wind originates (0-360°)</td>
+                </tr>
+                <tr>
+                    <td class="sensor-name">Accumulated Precipitation</td>
+                    <td class="sensor-symbol">accum_precip</td>
+                    <td class="sensor-units">in</td>
+                    <td class="sensor-description">Total rainfall accumulated over time period</td>
+                </tr>
+                <tr>
+                    <td class="sensor-name">Pressure</td>
+                    <td class="sensor-symbol">pressure</td>
+                    <td class="sensor-units">hPa</td>
+                    <td class="sensor-description">Barometric pressure at tower elevation</td>
+                </tr>
+                <tr>
+                    <td class="sensor-name">Altimeter</td>
+                    <td class="sensor-symbol">altimeter</td>
+                    <td class="sensor-units">inHg</td>
+                    <td class="sensor-description">Pressure adjusted to sea level for aviation and weather purposes</td>
+                </tr>
+                <tr>
+                    <td class="sensor-name">Solar Flux</td>
+                    <td class="sensor-symbol">solar_flux</td>
+                    <td class="sensor-units">W/m²</td>
+                    <td class="sensor-description">Solar radiation intensity - amount of solar energy received per unit area</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="footer">
+        <p>Data provided by <a href="https://metobs.ssec.wisc.edu/api/data" target="_blank">University of Wisconsin-Madison Space Science and Engineering Center</a></p>
+        <p>Last updated: <span id="lastUpdated"></span></p>
+    </div>
+
+    <script>
+        // Set the last updated date
+        document.getElementById('lastUpdated').textContent = new Date().toLocaleDateString();
+    </script>
+</body>
+</html>
